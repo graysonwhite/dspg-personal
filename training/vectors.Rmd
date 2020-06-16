@@ -1,0 +1,144 @@
+---
+title: "vectors"
+author: "Grayson White"
+date: "6/16/2020"
+output: html_document
+---
+
+# Shawn Lecture
+
+```{r}
+nums <- c(10, 20, 30, 40)
+nums
+
+anum <- 100
+anum
+
+buncha_nums <- seq(0.1, 99, .5)
+buncha_nums
+```
+
+## Types of vecs
+```{r}
+# numeric
+nums <- c(10, 20, 30, 40)
+nums
+
+# character
+words <- c("hi", "there", "joe")
+words
+
+# logical
+check <- c(TRUE, FALSE, TRUE, TRUE)
+check
+```
+
+
+```{r}
+# mixing types
+test <- c(10, TRUE, "50", FALSE)
+class(test)
+test
+
+test_numeric <- as.numeric(test)
+test_numeric
+```
+
+```{r}
+# integers vs. floats
+
+class(nums)
+
+nums_int <- as.integer(nums)
+class(nums_int)
+nums_int
+```
+
+We will be using snake case variable names
+
+Vectors don't nest. 
+
+```{r}
+nums_a <- c(10, 20, 30)
+nums_b <- c(40, 50)
+nums_c <- c(nums_a, nums_b)
+nums_c
+```
+
+R is vectorized.
+
+```{r}
+# reverse order
+rev(nums_c)
+```
+
+
+selective replacement
+```{r}
+nums
+nums[2] <- 200
+nums
+
+nums[c(3,2,4)] <- -100
+nums
+```
+
+
+### named vectors
+
+```{r}
+nums <- c(10, 20, 30, 40)
+nums
+
+people <- c("joe", "kim", "jake", "bob")
+
+names(nums) <- people
+nums
+
+# index the vector by names, aka char vec
+subnums <- nums[c("kim", "joe")]
+subnums
+
+new_nums <- c(10,20,30)
+attr(new_nums, "example") <- 86
+print(new_nums)
+```
+
+## logical comparisons
+
+```{r}
+nums <- c(10,20,30,40)
+comp <- c(15,18,39,22)
+
+result <- nums < comp
+result
+
+print(nums < 24)
+
+people
+print(people == "kim")
+print(people %in% c("kim", "joe"))
+
+`%notin%` <- Negate(`%in%`)
+print(people %notin% c("kim", "joe"))
+```
+
+```{r}
+selector <- c(TRUE, FALSE, TRUE, TRUE)
+nums
+
+nums[selector]
+```
+
+```{r}
+sample <- rnorm(10, 6, 2)
+sample
+
+mean(sample)
+
+gt_mean <- sample[sample > mean(sample)]
+gt_mean
+```
+
+
+
