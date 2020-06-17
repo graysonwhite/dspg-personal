@@ -1,0 +1,113 @@
+---
+title: "Untitled"
+author: "Grayson White"
+date: "6/17/2020"
+output: html_document
+---
+
+# data frames
+## the basics
+```{r}
+peeps <- c("joe", "kim", "bob", "grayson")
+ages <- c(24, 19, 35, 21)
+likes_apples <- c(TRUE, TRUE, FALSE, TRUE)
+
+people <- data.frame(peeps, ages, likes_apples)
+people
+```
+
+```{r}
+row_names <- rownames(people)
+row_names
+
+col_names <- colnames(people)
+col_names
+
+rownames(people) <- c("p1", "p2", "p3", "p4")
+
+colnames(people) <- c("Peeps", "Ages", "LikesApples")
+
+people
+
+colnames(people)[2] <- "PeepAge"
+
+people
+```
+
+## selecting
+
+```{r}
+ages <- people[[2]]
+ages
+
+sub <- people[2]
+sub
+
+peeps <- people[["Peeps"]]
+peeps
+
+peeps <- people$Peeps
+peeps
+```
+
+## subsetting
+
+```{r}
+
+```
+
+## logical statements
+
+```{r}
+older_or_no_apples <- people[people$PeepAge > median(people$PeepAge) | !people$LikesApples, ]
+older_or_no_apples
+```
+
+## subset() - base R, but tidyverse-like
+
+```{r}
+older_or_no_apples <- subset(people, PeepAge > median(PeepAge) | !LikesApples)
+older_or_no_apples
+# we <3 non-standard evaluation
+```
+
+## tidyverse 
+### dplyr
+
+```{r}
+library(dplyr)
+
+people_tb <- as_tibble(people)
+people_tb
+
+older_or_no_apples <- filter(people, PeepAge > median(PeepAge) | !LikesApples)
+older_or_no_apples
+
+# filter, select, mutate, summarize, group_by, ...
+```
+
+### margrittr
+
+```{r}
+# get the absolute values, then the log_2, then the mean
+nums <- c(-2, 3, 4, 7, -12, 1)
+
+abs_nums <- abs(nums)
+logs <- log(abs_nums, base = 2)
+the_mean <- mean(logs)
+the_mean
+
+# the pipe
+
+nums %>%
+  abs() %>%
+  log(base = 2) %>%
+  mean()
+
+# note: the pipe is left associative
+```
+
+`tolower()` brings all letters to lower case
+`toupper()` ... upper case
+
+
