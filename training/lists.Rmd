@@ -101,10 +101,26 @@ pval_result <- ttest_result$p.value
 pval_result
 ```
 
+```{r}
+people$fav_nums <- c(7,24,8)
+str(people)
+```
+
 
 ```{r}
 library(rjson)
+# json is a syntax for describing data
+# most programming langs have: numbers, arrays ( unnanmed lists or vectors ), strings, 
+# maps/dictionaries/hashes ( {"joe": 23, "kim": 42} ), logicals ( TRUE, FALSE )
 
+people_json <- '{"peeps": ["joe", "kim", "ashley"], "ages": [24, 45, 36], "fav_nums": [7, 24, 8]}'
+
+result <- fromJSON(people_json)
+str(result)
+
+
+res <- toJSON(people)
+res
 ```
 
 
