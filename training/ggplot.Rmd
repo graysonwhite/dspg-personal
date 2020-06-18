@@ -1,0 +1,96 @@
+---
+title: "ggplot"
+author: "Grayson White"
+date: "6/18/2020"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+print(as_tibble(diamonds))
+```
+
+```{r}
+p1 <- ggplot() +
+  layer(
+    data = diamonds,
+    stat = "identity",
+    geom = "point",
+    mapping = aes(x = carat,
+                  y = price,
+                  color = cut),
+    position = "identity"
+  ) +
+  layer(
+    data = diamonds,
+    stat = "smooth",
+    geom = "line",
+    mapping = aes(x = carat,
+                  y = price,
+                  color = cut),
+    position = "identity",
+    params = list(method = "auto")
+  )
+  theme_bw()
+p1
+```
+
+```{r}
+p2 <- ggplot() + 
+  layer(
+    data = diamonds,
+    stat = "bin",
+    geom = "bar",
+    mapping = aes(x = carat,
+                  y = ..count..),
+    position = "identity"
+  ) +
+  layer(
+    data = diamonds,
+    stat = "bin",
+    geom = "point",
+    mapping = aes(x = carat,
+                  y = ..count..),
+    position = "identity"
+  ) +
+  theme_bw()
+p2
+```
+
+
+```{r}
+p3 <- ggplot() +
+  stat_bin(data = diamonds,
+           mapping = aes(x = carat)) +
+  theme_bw()
+p3
+
+p4 <- ggplot() +
+  geom_histogram(data = diamonds,
+                 mapping = aes(x = carat)) +
+  theme_bw()
+p4
+```
+
+```{r}
+p5 <- ggplot(diamonds,
+             aes(x = carat, y = table)) +
+  geom_point(aes(color = price/ carat)) +
+  stat_smooth(method = "lm",
+              color = "red") +
+  facet_wrap(~ cut, scales = "fixed") +
+  theme_bw()
+p5
+
+p6 <- ggplot(diamonds,
+             aes(x = carat, y = table)) +
+  geom_point(aes(color = price/ carat)) +
+  stat_smooth(method = "lm",
+              color = "red") +
+  facet_grid(cut ~ cut(price, breaks = 10),
+             margins = TRUE) +
+  theme_bw()
+p6
+```
+
+

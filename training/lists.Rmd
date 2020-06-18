@@ -1,0 +1,111 @@
+---
+title: "lists"
+author: "Grayson White"
+date: "6/18/2020"
+output: html_document
+---
+
+# lists
+
+```{r}
+nums <- c(3, 4, 6, 2)
+
+people <- list(c("joe", "kim", "ashley"),
+               c(24, 45, 36),
+               list(
+                 c("fluffy", "max"),
+                 c("alex"),
+                 c("bubbles")
+                 )
+               )
+sublist1 <- people[c(2, 1)]    # ages vec, and names vec (list of length 2)
+sublist2 <- people[2]         # list of length 1
+ages <- people[[2]]           # entry out of list (this is a vector)
+
+people
+sublist1
+sublist2
+ages
+
+
+people[[3]][[1]]   # first element of third item in list
+```
+
+```{r}
+# str() is very helpful for printing lists
+str(people)
+```
+
+
+```{r}
+# subsetting lists
+subset <- people[(c(3,2))]
+subset
+names(people) <- c("peeps", "ages", "pets")       # stored as an attribute
+
+subset <- people[c("pets", "ages")]
+subset
+
+
+ages <- people[["ages"]]
+ages
+
+ages <- people$ages     # short for people[["ages"]]
+ages
+
+str(people)
+
+names(people$pets) <- c("joepets", "kimpets", "ashleypets")
+str(people)
+
+people$pets$joepets[2]
+```
+
+
+```{r}
+# create new elts by name just by assigning to them
+people$numkids <- c(2,0,1)
+str(people)
+
+```
+
+```{r}
+# looking up an entry by name is fast. 
+# replacing entries by name is fast. 
+# adding new entries is slow. 
+# the `hash` library can mitigate this if wanted/needed. (seems unlikely)
+```
+
+
+# attributes
+
+```{r}
+str(people)
+
+people$numkids <- NULL      # delete entry from list
+str(people)
+
+attr(people$ages, "unit") <- "years"
+attr(people$peeps, "type") <- "first name"
+str(people)
+
+sample1 <- rnorm(100, mean = 10, sd = 2)
+sample2 <- rnorm(100, mean = 11, sd = 2)
+
+ttest_result <- t.test(sample1, sample2)
+ttest_result
+
+str(ttest_result)
+
+pval_result <- ttest_result$p.value
+pval_result
+```
+
+
+```{r}
+library(rjson)
+
+```
+
+
+
