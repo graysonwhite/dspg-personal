@@ -1,0 +1,53 @@
+---
+title: "Aging and Energy Cost in WWTPs"
+subtitle: "Paper by Castellet-Viciano et al."
+author: "Grayson White"
+date: "June 23, 2020"
+output:
+  xaringan::moon_reader:
+    css: ["reed.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: atelier-forest-light
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+---
+
+# Overview
+
+What this paper sets out to do:
+
+* Predict energy cost of WWTPs as a function of age of facility, size of WWTP, and type of WWTP.
+
+Why:
+
+* A large portion of the operating costs of a WWTP are associated with energy costs.
+* Mitigate environmental impact of WWTPs.
+* Important to WWTP managers (energy is expensive)
+
+---
+
+# The Data
+
+* 966 Observations (322 WWTPs)
+* All WWTPs from Spain, data from 2010, 2011, 2012
+* Variables: energy cost, volume of WW treated, amount of contaminants, chemical oxygen demand (COD) removed from the WW, design flow, equivalent inhabitants
+
+```{r, out.width = "750px", echo = FALSE}
+knitr::include_graphics("table1.png")
+```
+
+---
+
+# 
+
+---
+
+# The Model
+
+
+
+---
+
+# 
