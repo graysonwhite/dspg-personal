@@ -21,15 +21,14 @@ class: center, middle, inverse, title-slide
 
 # Overview
 
-What this paper sets out to do:
-
-* Predict energy cost of WWTPs as a function of age of facility, size of WWTP, and type of WWTP.
+* This paper sets out to predict energy cost of WWTPs as a function of age of facility, size of WWTP, and type of WWTP
 
 Why:
 
-* A large portion of the operating costs of a WWTP are associated with energy costs.
-* Mitigate environmental impact of WWTPs.
-* Important to WWTP managers (energy is expensive)
+* A large portion of the operating costs of a WWTP are associated with energy costs
+* Mitigate environmental impact of WWTPs
+
+&lt;img src="abstract.png" width="750px" /&gt;
 
 ---
 
@@ -43,17 +42,64 @@ Why:
 
 ---
 
-# 
+# The Data Used in the Model
+
+* Technology groups:    
+    T1: Oxygen supply systems (activated sludge &amp; extended aeration)    
+    T2: Non-oxygen supply systems (biodisk technology)    
+    Note: T1 is much more energy demanding than T2
+* Both technology groups show an increase in energy cost over time, but only T1 has a statistically significant increase in our time period:
+
+&lt;img src="table3.png" width="450px" style="display: block; margin: auto;" /&gt;
+
+---
+
+# The Data Used in the Model (cont.)
+
+* Volume of Wastewater Treated Groups:       
+    D1: facilities that treat up to 55,000 `\(m^3\)`/year,       
+    D2: `\(\dots\)`between 55,000 and 275,000 `\(m^3\)`/year,    
+    D3: `\(\dots\)` more than 275,000 `\(m^3\)`/year.
+* They see statistical signifance in D2 and D1
+
+
+* Data subset: D1/D2 "size" facilities that are also T1 (102 out of 322 WWTPs)
 
 ---
 
 # The Model
 
+* Models aging of WWTP in an interesting and more robust way than the previous literature
+* Energy cost model variable desciption:     
+    `\(EC = \text{energy cost per year}\)`,    
+    `\(V = \text{volume of wastewater treated}~ (m^3 / \text{year})\)`,    
+    `\(M =\)` COD removed (kg/year),    
+    `\(J =\)` aging.
+* Final EC model:
+$$
+EC = 0.125 \cdot V^{0.791} \cdot \exp(5.38 \times 10^{-8} \cdot M + 0.103 \cdot J)
+$$
 
+* Good fit: `\(r^2 = 0.890\)`
 
 ---
 
-#
+# Notes on the Model
+
+* Volume of wastewater treated is negatively correlated with energy cost per year     
+    This may be explained by:      
+    (1) larger facilities present better maintenance of the equipment     
+    (2) smaller facilities tend to be oversized and deteriorate more rapidly, so differences in the energy consumption over time are more notable in these cases
+    
+* Coefficent on COD removed is **very** small   
+
+---
+
+# Key Takeaways
+
+* Energy costs make up a large portion of the cost associated with maintaining a WWTP
+* Energy costs increase with time, especially with smaller WWTPs
+* Advise towns to invest in non-oxygen supply systems and to keep up on maintenance to avoid high energy costs
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
