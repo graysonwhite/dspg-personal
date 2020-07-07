@@ -1,0 +1,39 @@
+---
+title: "Wastewater Reuse for Agriculture"
+subtitle: "Paper by Tran et al."
+author: "Grayson White"
+date: "July 8, 2020"
+output:
+  xaringan::moon_reader:
+    css: ["reed.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: atelier-forest-light
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+---
+
+# Overview and Goals
+
+* This paper sets out to optimize the cost of producing a water supply that meets and exceeds the water quality requirements for agriculutural reuse
+
+Why:
+
+* 
+* 
+
+---
+
+# Methods
+
+---
+
+# Results
+
+---
+
+# Key Takeaways
+
+*      
+* 
