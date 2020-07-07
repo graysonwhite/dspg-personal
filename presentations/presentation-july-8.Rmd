@@ -60,7 +60,7 @@ knitr::include_graphics("results1.png")
 * They produced $11\times 2 \times 6$ of these, total 132 ratios
 ---
 
-# Results (broad)
+# Results (broader)
 
 ## Citrus
 
@@ -72,10 +72,9 @@ knitr::include_graphics("results1.png")
 * Chlorine disinfection was necessary to ensure that the water quality was compliant with Title 22 regulations.
 * Economies of scale still applies.
 
-
 ---
 
-# Key Takeaways
+# Limitations
 
-*      
-* 
+* Water quality requirements associated with two separate crops in isolation 
+* Cost-minimization framework. The alternative here is that cropwater production functions could be incorporated into the model along with their associated prices and costs so that the model could identify efficient solutions in which net benefits are maximized; net benefits are defined by the profits to the water user less the costs to the wastewater treatment plant operator.
