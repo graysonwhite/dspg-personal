@@ -16,11 +16,9 @@ output:
 
 # Overview and Goals
 
-* This paper sets out to optimize the cost of producing a water supply that meets and exceeds the water quality requirements for agriculutural reuse
-
-* Explores 11 "treatment trains" 
-
-* Proposes an optimized blending ratio of wastewater for each treatment train for turfgrass and citrus
+* This paper sets out to optimize the cost of producing a water supply that meets and exceeds the water quality requirements for agriculutural reuse.
+* Explores 11 "treatment trains." 
+* Proposes an optimized blending ratio of wastewater for each treatment train for turfgrass and citrus.
 
 ```{r, out.width = "500px", echo = FALSE, fig.align='center'}
 knitr::include_graphics("abstract2.png")
@@ -30,9 +28,8 @@ knitr::include_graphics("abstract2.png")
 
 # Treatment Trains
 
-* For each "train" they found the optimal proportion of wastewater in the treatment solution
-
-* They did this for both turfgrass and citrus
+* For each "train" they found the optimal blending of wastewater.
+* They did this for both turfgrass and citrus.
 
 ```{r, out.width = "500px", echo = FALSE, fig.align='center'}
 knitr::include_graphics("treatment-trains.png")
@@ -42,9 +39,9 @@ knitr::include_graphics("treatment-trains.png")
 # Regional Water Reuse Decision-Support Model
 
 * Inputs:      
-    * Concentrations of water quality parameters in a given unit volume of wastewater    
-    * Concentrations of water quality parameters associated with effluent from each treatment process    
-    * Concentration limits of water quality parameters to meet crop requirements     
+    * Concentrations of water quality parameters in a given unit volume of wastewater.    
+    * Concentrations of water quality parameters associated with effluent from each treatment process.    
+    * Concentration limits of water quality parameters to meet crop requirements.     
     * The unit cost for each treatment process.
 
 * Constraints:      
@@ -55,13 +52,25 @@ knitr::include_graphics("treatment-trains.png")
 
 # Results (narrow)
 
+```{r, out.width = "500px", echo = FALSE, fig.align='center'}
+knitr::include_graphics("results1.png")
+```
 
-
-
+* MF-RO treatment train results for turfgrass, under all three scenarios
+* They produced $11\times 2 \times 6$ of these, total 132 ratios
 ---
 
-# Results (general)
+# Results (broad)
 
+## Citrus
+
+* The treatment costs for large facilities were nearly 50% less than the costs under small−medium plant sizes, highlighting the effect of economies of scale.
+* They were able to generate a feasible and cost-effective irrigation source for citrus while complying with Title 22 regulations and without affecting soil and crop health.
+
+## Turfgrass
+
+* Chlorine disinfection was necessary to ensure that the water quality was compliant with Title 22 regulations.
+* Economies of scale still applies.
 
 
 ---
